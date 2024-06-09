@@ -1,12 +1,12 @@
 package com.example.customer_service.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @version: v0.0.1
- * @author: lakshanR
+ * @author: navishka
  * @date: 5/31/2024
  */
 
@@ -14,8 +14,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/v1/customer")
 public class CustomerController {
 
+    @Autowired
+    public RestTemplate restTemplate;
+
     @GetMapping("/getCustomer")
     public String getCustomer(){
-        return "Customer Service Works!";
+        System.out.println("wade hari machan");
+        return restTemplate.getForObject("http://localhost:8081/api/v1/item/getItem",String.class);
+
+    }
+
+    @PostMapping("/saveCustomer")
+    public String saveCustomer(@RequestBody CustomerDto customerDto){
+        System.out.println("customer save wade hari machan");
+        System.out.println(customerDto);
+        return customerDto.toString();
+
+
     }
 }
