@@ -20,7 +20,7 @@ public class CustomerController {
     @GetMapping("/getCustomer")
     public String getCustomer(){
         System.out.println("wade hari machan");
-        return restTemplate.getForObject("http://localhost:8081/api/v1/item/getItem",String.class);
+        return restTemplate.getForObject("http://ITEM-SERVICE/api/v1/item/getItem",String.class);
 
     }
 

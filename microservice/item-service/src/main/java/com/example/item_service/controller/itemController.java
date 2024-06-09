@@ -31,6 +31,6 @@ public class itemController {
     public String saveItem(){
         System.out.println("item save  wade hari machan");
         CustomerDto customerDto = new CustomerDto("C001","navishka","matara");
-        return restTemplate.postForObject("http://localhost:8082/api/v1/customer/saveCustomer",customerDto,String.class);
+        return restTemplate.postForObject("http://CUSTOMER-SERVICE/api/v1/customer/saveCustomer",customerDto,String.class);
     }
 }
