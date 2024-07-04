@@ -5,6 +5,7 @@ import lk.ijse.ticketway.vehicleservice.entity.Vehicle;
 import lk.ijse.ticketway.vehicleservice.repository.VehicleRepository;
 import lk.ijse.ticketway.vehicleservice.service.VehicleService;
 import lk.ijse.ticketway.vehicleservice.util.ResponseDTO;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
